@@ -1,0 +1,139 @@
+body {
+    background-color: #f3f3f3;
+}
+
+header {
+    display: flex;
+    background-color: #47682c;
+    border-bottom: 3px solid #1B1B1E;
+}
+
+.nav-logo {
+    text-decoration: none;
+}
+
+h1 {
+    font-size: 48px;
+    color: #b1c46c;
+    font-family: "proxima_novabold";
+    margin-left: 200px;
+}
+
+h2 {
+    color: #1B1B1E;
+    font-family: "proxima_novabold";
+    margin-bottom: 0px;
+}
+
+.employee-form-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+    width: 400px;
+    border-radius: 5px;
+}
+
+.input-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+input {
+    border: 0;
+    outline: 0;
+    border-bottom: 1px solid;
+}
+
+.input-wrapper-fieldset {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+legend {
+    color: black;
+}
+
+label {
+    font-family: "proxima-novaregular";
+    margin-bottom: 5px;
+}
+
+.dropdown {
+    display: block;
+}
+
+.dropdown-department {
+    background-color: grey;
+}
+
+.button-save {
+    font-family: "proxima-novaregular";
+    font-size: 16px;
+    color: #b1c46c;
+    background-color: #47682c;
+    height: 30px;
+    width: 120px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.employee-list-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.employee-table {
+    background-color: white;
+    margin-top: 20px;
+}
+
+.sorting {
+    padding: 15px;
+}
+
+.employee-current {
+    padding-left: 15px;
+}
+
+.employee-line {
+    border-top: 1px solid black;
+}
+
+.employee-details {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.table-container {
+    margin-top: 40px;
+}
+
+@font-face {
+    font-family: 'proxima_novabold';
+    src: url('./polices/proxima_nova_bold-webfont.woff2') format('woff2'),
+         url('./polices/proxima_nova_bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'proxima_novaregular';
+    src: url('./polices/proximanova-regular-webfont.woff2') format('woff2'),
+         url('./polices/proximanova-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
