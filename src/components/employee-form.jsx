@@ -3,13 +3,16 @@ import { NavLink } from 'react-router-dom'
 import { Dropdown } from "dropdown-library-marouanedmy";
 import state from "../data/state"
 import department from "../data/department"
-import { useSelector, useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { create } from '../store/employee'
 
 
 export default function EmployeeForm(props) {
-    const employee = useSelector((state)=>state.employee.create)
 
+
+    /**
+     * Creating a state variable called user and setting it to the object that is passed in.
+    */ 
     const [user, setUser] = React.useState({
         firstName: "",
         lastName: "",
@@ -22,8 +25,14 @@ export default function EmployeeForm(props) {
         zipCode: ""
     })
 
+    /**
+     * Creating a function that will dispatch an action to the store. 
+    */ 
     const dispatch = useDispatch()
 
+    /**
+     * Dispatch user to the store
+    */
     const save = () => {
         dispatch(create(user))
     }

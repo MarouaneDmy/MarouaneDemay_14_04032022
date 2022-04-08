@@ -3,12 +3,12 @@ import { createSlice } from '@reduxjs/toolkit'
 export const employeeSlice = createSlice({
     name: 'employee',
     initialState: {
-        create: null,
         list: []
     },
     reducers: {
+        /* A reducer function. It is a function that takes in the current state and an action and
+        returns a new state. */
         create:(state, action)=>{
-            state.create = action.payload
             state.list.push(action.payload)
         }
     },

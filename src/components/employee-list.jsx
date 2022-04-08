@@ -11,20 +11,38 @@ import TableSortLabel from '@mui/material/TableSortLabel';
 
 export default function EmployeeList(props) {
     const employee = useSelector((state)=>state.employee.list).slice();
+
     const [sortBy, setSortBy] = React.useState('firstName')
     const [direction, setDirection] = React.useState('asc')
     const [page, setPage] = React.useState(0);
     const [rowsPerPage, setRowsPerPage] = React.useState(5);
     
+    /**
+     * When the user clicks on a page number, set the page number to the new page number.
+     * @param {*} event 
+     * @param {number} newPage 
+    */
     const handleChangePage = (event, newPage) => {
         setPage(newPage);
     };
 
+
+    /**
+     * When the user changes the number of rows per page, set the number of rows per page to the new
+     * value and set the page to 0.
+     * @param {*} event 
+     */
     const handleChangeRowsPerPage = (event) => {
         setRowsPerPage(parseInt(event.target.value, 10));
         setPage(0);
     };
 
+
+    /**
+     * If the direction is ascending, set the direction to descending, otherwise set the direction to
+     * ascending.
+     * @param {string} name 
+     */
     function triAscendant(name) {
         setSortBy(name)
         if(direction === 'asc') {
@@ -74,7 +92,14 @@ export default function EmployeeList(props) {
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        {employee.sort(function (a, b) {
+                        {employee.sort(
+                        /**
+                         * A sorting function.
+                         * @param {string} a 
+                         * @param {string} b 
+                         * @returns 
+                         */
+                        function (a, b) {
                             let varA = a[sortBy]
                             let varB = b[sortBy]
                             if (sortBy === "dateOfBirth" || sortBy === "startDate") {
@@ -107,40 +132,6 @@ export default function EmployeeList(props) {
                     />
                 </Table>
             </TableContainer>
-            {/* 
-            <table className="employee-table">
-                <thead>
-                    <tr role="row">
-                        <th className="sorting">First Name</th>
-                        <th className="sorting">Last Name</th>
-                        <th className="sorting">Start Date</th>
-                        <th className="sorting">Department</th>
-                        <th className="sorting">Date of Birth</th>
-                        <th className="sorting">Street</th>
-                        <th className="sorting">City</th>
-                        <th className="sorting">State</th>
-                        <th className="sorting">Zip Code</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {employee.length ? ( 
-                        employee.map((el) => <tr className="employee-line">
-                            <td className="employee-current">{el.firstName}</td>
-                            <td className="employee-current">{el.lastName}</td>
-                            <td className="employee-current">{el.startDate}</td>
-                            <td className="employee-current">{el.department}</td>
-                            <td className="employee-current">{el.dateOfBirth}</td>
-                            <td className="employee-current">{el.street}</td>
-                            <td className="employee-current">{el.city}</td>
-                            <td className="employee-current">{el.state}</td>
-                            <td className="employee-current">{el.zipCode}</td>
-                        </tr>)
-                    ) : (
-                        <td colSpan={9} valign="top">No data available in table</td>
-                    )}
-                </tbody>
-            </table>
-            */}
         </section>
     );
 }
