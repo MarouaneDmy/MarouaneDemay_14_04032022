@@ -26,7 +26,6 @@ export default function EmployeeList(props) {
         setPage(newPage);
     };
 
-
     /**
      * When the user changes the number of rows per page, set the number of rows per page to the new
      * value and set the page to 0.
@@ -36,7 +35,6 @@ export default function EmployeeList(props) {
         setRowsPerPage(parseInt(event.target.value, 10));
         setPage(0);
     };
-
 
     /**
      * If the direction is ascending, set the direction to descending, otherwise set the direction to

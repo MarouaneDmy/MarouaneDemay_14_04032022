@@ -38,6 +38,7 @@ form {
     background-color: #ffffff;
     width: 400px;
     border-radius: 5px;
+    padding-bottom: 10px;
 }
 
 .input-wrapper {
@@ -80,7 +81,7 @@ label {
 .button-save {
     font-family: "proxima-novaregular";
     font-size: 16px;
-    color: #b1c46c;
+    color: white;
     background-color: #47682c;
     height: 30px;
     width: 120px;
